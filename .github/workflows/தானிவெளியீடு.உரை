@@ -1,0 +1,29 @@
+name: தானிவெளியீடு
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: எடு புதியது
+      uses: actions/checkout@master
+
+    - name: நிறுவு கட்டு
+      uses: montudor/action-zip@v1
+
+    - name: கட்டு
+      run: zip -qq -r Output.zip எழுத்தாளன்
+      working-directory: .
+
+    - name: குறிச்சொல் மாற்று
+      id: tag_version
+      uses: mathieudutour/github-tag-action@v6.1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: வெளியீடு
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "Output.zip"
+        tag: ${{ steps.tag_version.outputs.new_tag }}
+        name: வெளியீடு ${{ steps.tag_version.outputs.new_tag }}
+        body: மாற்றங்கள் ${{ steps.tag_version.outputs.changelog }}

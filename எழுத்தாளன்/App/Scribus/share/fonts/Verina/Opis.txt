@@ -1,0 +1,6 @@
+Verina to bezp³atny font dostêpny na licencji GPL.
+Oryginalna wersja (Bitsream Vera) pochodzi z http://www.gnome.org/fonts/
+Ograniczenia licencyjne dotycz¹ce fontu mówi¹, ¿e przy jakiejkolwiek edycji 
+nie mo¿na u¿ywaæ ju¿ pierwotnej nazwy.
+
+Wersja zlokalizowana i przekonwertowana do formatu OTF.
